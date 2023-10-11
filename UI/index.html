@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phân loại chất lượng dừa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="sec">
+        <div class="circle"></div>
+        <header>
+            <a href="#"><img src="logo.png" class="logo"></a>
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="#">Về chúng tôi</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </header>
+        <div class="Content">
+            <div class="textBox">
+                <h2>Đây chính là<br></h2>
+                <p>Phân loại chất lượng dừa (non, nạo, khô) là quá trình xác định và tách biệt các loại dừa dựa trên độ tuổi và mức độ chín của quả dừa. Điều này có thể thực hiện bằng cách sử dụng mắt thường hoặc các phương pháp công nghệ hơn để giúp trong việc phân loại dừa.</p>
+                <a href="#">Xem sản phẩm</a>
+            </div>
+            <div class="imgBox">
+                <img src="non.png" class="non">
+            </div>
+        </div>
+        <ul class="sci">
+            <li><a href="#"><img src="facebook.png"></a></li>
+            <li><a href="#"><img src="instagram.png"></a></li>
+            <li><a href="#"><img src="twitter.png"></a></li>
+        </ul>
+    </section>
+    <footer>
+        <p>@ 2023 Dừa - DPL302m </p>
+    </footer>
+    <script type="text/javascript">
+        let currentIndex = 0;
+        const images = ['non.png', 'kho.png'];
+        let imageChangeInterval; // Đặt biến imageChangeInterval ở đây để có thể gán lại giá trị sau nếu cần
+    
+        function imgslider(imagePath) {
+            document.querySelector('.non').src = imagePath;
+        }
+    
+        function autoChangeImage() {
+            imgslider(images[currentIndex]);
+            currentIndex = (currentIndex + 1) % images.length;
+        }
+    
+        // Set an interval to automatically change images every 3 seconds (3000 milliseconds)
+        imageChangeInterval = setInterval(autoChangeImage, 3000); // Gán giá trị ban đầu cho imageChangeInterval
+    </script>
+</body>
+</html>
