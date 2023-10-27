@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phân loại chất lượng dừa (non, nạo, khô)</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style3.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <a href="#"><img src="{{ url_for('static', filename='logo.png') }}" class="logo"></a>
+    <div class="menu-btn"></div>
+    <div class="navigation">
+        <div class="navigation-items">
+            <a href="/">Trang Chủ</a>
+            <a href="/products">Sản Phẩm</a>
+            <a href="/aboutus">Nhóm Phát Triển</a>
+            {% if 'email' in session %}
+                <button class="btnLogin-popup" id="logoutButton">Đăng Xuất</button>
+                <h2> Hello {{session['username']}}</h2>
+            {% else %}
+                <button class="btnLogin-popup" onclick="window.location.href = '/login'">Đăng Nhập</button>
+            {% endif %}
+        </div>
+    </div>
+</header>
+<section class="home">
+    <video class="video-slide active" src="{{ url_for('static', filename='video2.mp4') }}" autoplay muted loop></video>
+    <video class="video-slide" src="{{ url_for('static', filename='video1.mp4') }}" autoplay muted loop></video>
+    <video class="video-slide" src="{{ url_for('static', filename='video3.mp4') }}" autoplay muted loop></video>
+    <video class="video-slide" src="{{ url_for('static', filename='video4.mp4') }}" autoplay muted loop></video>
+  <div id="image-upload-popup" class="image-upload-popup">
+    <label for="input-file" id="drop-area">
+      <input type="file" accept="image/*" id="input-file" hidden>
+      <div id="img-view">
+        <img src="{{ url_for('static', filename='iconupload.png') }}">
+        <P>Kéo và thả hoặc bấm vào đây<br>để tải ảnh lên</P>
+      <!-- <span> Tải bất kì ảnh từ máy lên</span> -->
+      </div>
+    </label>
+  </div>
+    <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+    </div>
+    <div class="media-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+</section>
+<script type="text/javascript">
+    // JavaScript for the responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+    menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+    });
+    // JavaScript for video slider navigation
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+
+    var sliderNav = function (manual) {
+        btns.forEach((btn) => {
+            btn.classList.remove("active");
+        });
+
+        slides.forEach((slide) => {
+            slide.classList.remove("active");
+        });
+        btns[manual].classList.add("active");
+        slides[manual].classList.add("active");
+    };
+    btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+            sliderNav(i);
+        });
+    });
+
+
+    const logoutButton = document.getElementById("logoutButton");
+
+        logoutButton.addEventListener("click", () => {
+        window.location.href = '/logout'; // Gửi yêu cầu GET đến '/logout'
+    });
+</script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<script src="{{ url_for('static', filename='products.js') }}"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+
+
