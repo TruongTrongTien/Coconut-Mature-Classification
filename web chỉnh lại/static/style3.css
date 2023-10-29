@@ -1,0 +1,127 @@
+body {
+    overflow: hidden;
+  }
+  
+  .upload {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    position: relative;
+  }
+  
+  #drop-area {
+    width: 700px;
+    height: 350px;
+    padding: 30px;
+    background: #fff;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: -110px;
+  }
+  
+  #img-view {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: 2px dashed #bbb5ff;
+    background: #f7f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+  }
+  
+  #img-view img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  
+  #img-view span {
+    display: block;
+    font-size: 12px;
+    color: #777;
+    margin-top: 15px;
+  }
+  
+  #camera-container {
+    display: none; /* Initially hide the camera container */
+    width: 700px; /* Set the desired width for the camera container */
+    height: 350px; /* Set the desired height for the camera container */
+    border-radius: 20px;
+    border: 2px ;
+    background: #f7f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto 0;
+    overflow: hidden;
+    position: relative;
+    margin-top: -110px;
+}
+
+#camera-view{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+#captured-photo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.camera-button {
+  position: absolute;
+  bottom: 200px;
+  margin-left: 200px;
+  z-index: 2;
+  padding: 10px 20px; /* Tùy chỉnh kích thước và khoảng cách bên trong */
+  background-color: #3498db; /* Màu nền */
+  color: #fff; /* Màu chữ */
+  border: none; /* Loại bỏ đường viền */
+  border-radius: 5px; /* Bo tròn góc */
+  cursor: pointer; /* Biến con trỏ thành bàn tay khi di chuột qua */
+  width: 120px; /* Set a fixed width for the button */
+  text-align: center; /* Center the text horizontally */
+}
+
+/* Hover state để tạo hiệu ứng khi di chuột qua */
+.camera-button:hover {
+  background-color: #2980b9;
+}
+#take-photo img {
+  width: 30px; /* Đặt kích thước của hình ảnh theo mong muốn */
+  height: 30px;
+}
+
+
+.predict-button {
+  position: absolute;
+  bottom: 200px;
+  margin-left: 330px; 
+  z-index: 2;
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Hover state for the predict-button */
+.predict-button:hover {
+  background-color: #c0392b;
+}
+
+
+
+
+
+
+
+
+
+  
