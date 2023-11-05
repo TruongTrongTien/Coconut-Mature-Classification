@@ -1,0 +1,14 @@
+ID: 2, Coconut Type: Dừa nạo
+ID: 3, Coconut Type: Dừa non
+ID: 4, Coconut Type: Dừa non
+ID: 5, Coconut Type: Dừa già
+ID: 6, Coconut Type: Dừa non
+ID: 7, Coconut Type: Dừa nạo
+ID: 8, Coconut Type: Dừa nạo
+ID: 9, Coconut Type: Dừa già
+ID: 10, Coconut Type: Dừa già
+ID: 11, Coconut Type: Dừa già
+ID: 12, Coconut Type: Dừa nạo
+ID: 13, Coconut Type: Dừa già
+ID: 14, Coconut Type: Dừa già
+ID: 15, Coconut Type: Dừa già
