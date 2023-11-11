@@ -9,14 +9,18 @@ This repository hosts an AI-based system for accurately classifying the maturity
 * Training
 * Evaluation
 * Results
+* Limits
 * Contributing
 
 # Motivation
 # Dataset
-https://drive.google.com/drive/folders/1IoUpBAI8BWnbe_s-eyFtMbCO16AEHO8b?usp=sharing
+Link dataset: https://drive.google.com/drive/folders/1IoUpBAI8BWnbe_s-eyFtMbCO16AEHO8b?usp=sharing
+
+Dataset description:
 # Installation
 # Usage
 # Training
 # Evaluation
 # Results
+# Limits
 # Contributing
