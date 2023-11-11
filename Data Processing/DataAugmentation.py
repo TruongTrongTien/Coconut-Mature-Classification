@@ -1,7 +1,7 @@
 """
-data_augmentation
+Data Augmentation
 
-This module performs data augmentation on images in the specified directory.
+This module performs data augmentation on "young cooconuts" images in the specified directory.
 """
 
 import os
@@ -9,13 +9,13 @@ import random
 from torchvision import transforms
 from PIL import Image
 
-# Đường dẫn đến thư mục chứa ảnh gốc
+# Path to the folder containing the original image
 ORIGINAL_DUANON_PATH = r"C:\Users\ACER\Desktop\Coconut-Mature-Classification\dua non"
 
-# Số lượng ảnh bạn muốn tạo
+# Number of photos you want to create
 NUM_AUGMENTED_IMAGES = 600
 
-# Biến đổi dữ liệu
+# Transform data
 DATA_AUGMENTATION = transforms.Compose([
     transforms.RandomHorizontalFlip(),
     transforms.RandomRotation(10),
@@ -24,7 +24,7 @@ DATA_AUGMENTATION = transforms.Compose([
     transforms.RandomPerspective(distortion_scale=0.2, p=0.5),
 ])
 
-# Lấy số cuối cùng trong tên ảnh gốc
+# Get the last number in the original image name
 last_image_number = max(
     (int(file.split('.')[0]) for file in os.listdir(ORIGINAL_DUANON_PATH) if file.endswith('.jpg')),
     default=0
@@ -32,7 +32,7 @@ last_image_number = max(
 image_count = last_image_number + 1
 original_images = [file for file in os.listdir(ORIGINAL_DUANON_PATH) if file.endswith('.jpg')]
 
-# Lặp để tạo thêm ảnh mới
+# Repeat to create new images
 for i in range(NUM_AUGMENTED_IMAGES):
     original_image_path = os.path.join(ORIGINAL_DUANON_PATH, random.choice(original_images))
     new_image_name = f'{image_count}.jpg'
