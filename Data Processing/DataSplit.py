@@ -8,35 +8,35 @@ import os
 import shutil
 import random
 
-# Đường dẫn đến thư mục chứa ảnh gốc
+# Path to the folder containing the original image
 DATA_DIR = r'C:\Users\ACER\Desktop\Coconut-Mature-Classification\dua nao'
 
 TRAIN_DIR = r'C:\Users\ACER\Desktop\Coconut-Mature-Classification\train\dua nao'
 VAL_DIR = r'C:\Users\ACER\Desktop\Coconut-Mature-Classification\val\dua nao'
 TEST_DIR = r'C:\Users\ACER\Desktop\Coconut-Mature-Classification\test\dua nao'
 
-# Tạo thư mục nếu chưa tồn tại
+# Create a directory if it doesn't exist yet
 os.makedirs(TRAIN_DIR, exist_ok=True)
 os.makedirs(VAL_DIR, exist_ok=True)
 os.makedirs(TEST_DIR, exist_ok=True)
 
-# Lấy danh sách tất cả các tệp hình ảnh trong thư mục dữ liệu
+# Get a list of all image files in the data directory
 IMAGE_FILES = os.listdir(DATA_DIR)
 
-# Xáo trộn danh sách
+# Shuffle the list
 random.shuffle(IMAGE_FILES)
 
-# Tính số lượng tệp cho mỗi phần
+# Calculate the number of files for each section
 TOTAL_IMAGES = len(IMAGE_FILES)
 TRAIN_SPLIT = int(0.8 * TOTAL_IMAGES)
 VAL_SPLIT = int(0.1 * TOTAL_IMAGES)
 
-# Chia tệp
+# Split files
 TRAIN_FILES = IMAGE_FILES[:TRAIN_SPLIT]
 VAL_FILES = IMAGE_FILES[TRAIN_SPLIT:TRAIN_SPLIT + VAL_SPLIT]
 TEST_FILES = IMAGE_FILES[TRAIN_SPLIT + VAL_SPLIT:]
 
-# Di chuyển vào mục tương ứng
+# Move to the corresponding item
 for file in TRAIN_FILES:
     src = os.path.join(DATA_DIR, file)
     dst = os.path.join(TRAIN_DIR, file)
