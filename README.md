@@ -10,7 +10,7 @@ This repository hosts an AI-based system for accurately classifying the maturity
 * Evaluation
 * Results
 * Limits
-* Contributing
+* Contributions
 
 # Motivation
 # Dataset
@@ -23,4 +23,4 @@ Dataset description:
 # Evaluation
 # Results
 # Limits
-# Contributing
+# Contributions
