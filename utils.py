@@ -14,7 +14,7 @@ transform = transforms.Compose([
 ])
 
 def predict(image):
-    image = transforms(image).unsqueeze(0) 
+    image = transforms(image).unsqueeze(0)
     onnx_input = {onnx_session.get_inputs()[0].name: image.numpy()}
     onnx_output = onnx_session.run(None, onnx_input)[0]
     predicted_class = torch.argmax(torch.tensor(onnx_output)).item()
