@@ -19,6 +19,26 @@ This repository hosts an AI-based system for accurately classifying the maturity
 * Contributions
 
 # Motivation
+1. Background
+  - Coconut farming and its related industries play a crucial role in many tropical regions
+  - Ensuring the quality of coconuts at different maturity stages is essential for both farmers and downstream industries
+  - Currently, the assessment of coconut maturity relies heavily on manual labor making it a time-consuming and often subjective process.
+    
+2. Pain point
+  - The traditional method of assessing coconut maturity is fraught with challenges and pain points:
+           + Subjectivity,
+           + Labor-intensive,
+           + Time-consuming,
+           + Resource drain.
+  - The pain point lies in the need for a more efficient, objective, and accurate method to assess coconut maturity.
+    
+3. Objective
+  - Develop a computer vision-based system for coconut age classification, 
+  - Implement machine learning algorithms for image analysis and classification, 
+  - Enhance the accuracy and speed of coconut quality assessment, 
+  - Facilitate decision-making in coconut processing industries, 
+  - Reduce human labor and error in coconut quality assessment.
+      
 # Dataset
 Link dataset: https://drive.google.com/drive/folders/1IoUpBAI8BWnbe_s-eyFtMbCO16AEHO8b?usp=sharing
 
