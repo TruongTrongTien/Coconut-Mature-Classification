@@ -1,9 +1,8 @@
 ## Coconut-Mature-Classification
 This repository hosts an AI-based system for accurately classifying the maturity of coconuts (young, mature, old) by utilizing computer vision techniques to make accurate maturity assessments based on coconut images..
-![85751b8c69bfbfe1e6ae3](https://github.com/TruongTrongTien/Coconut-Mature-Classification/assets/118901444/da3e31af-6f5e-449e-8f3e-f48d9c42347d)
-![a9628827fa142c4a75058](https://github.com/TruongTrongTien/Coconut-Mature-Classification/assets/118901444/4f4cc502-f95a-4ed9-b1a6-7b93202b7641)
-
-![3943533a2209f457ad1815](https://github.com/TruongTrongTien/Coconut-Mature-Classification/assets/118901444/40b1cbf8-4201-4873-9154-1e7184c3a741)
+![91cf8ef8-bed5-4bd1-9cc2-0e132b727996](https://github.com/TruongTrongTien/Coconut-Mature-Classification/assets/118901444/be26a665-6e9b-42fb-b16b-9b31634b4c83)
+![005d0f10-8b94-443c-bc28-9ed0945cbed2](https://github.com/TruongTrongTien/Coconut-Mature-Classification/assets/118901444/86cccd41-9b94-4c08-8a54-f50924b92075)
+![b855b2df-676f-4080-9f34-6ad5468530a0](https://github.com/TruongTrongTien/Coconut-Mature-Classification/assets/118901444/2511fb56-1c3a-4eff-8462-4b0739b91624)
 
 # Table of Contents
 * Motivation
