@@ -81,6 +81,11 @@ header .logo
     position: relative;
     max-width: 100px;    
 }
+.mota {
+    position: relative;
+    height: 150px;
+    width: 150px;
+}
 
 header .navigation .navigation-items {
   display: flex;
@@ -168,8 +173,47 @@ section
 }
 .home .content p
 {
+    text-align: justify;
     margin-bottom: 65px;
 }
+/* Thêm vào nội dung sau thẻ head hoặc style.css */
+.details-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+  }
+  .details-link {
+    color: #1680AC; /* Thay đổi màu chữ tùy ý */
+    cursor: pointer; /* Để chỉ rõ là nút có thể nhấp được */
+}
+
+.details-content p{
+    color: #fff;
+    text-align: justify;
+}
+  .details-content {
+    background: rgba(0,0,0,0); /* 0.8 ở đây là độ trong suốt, giá trị từ 0 (hoàn toàn trong suốt) đến 1 (hoàn toàn không trong suốt) */
+    padding: 20px;
+    max-width: 600px;
+    text-align: center;
+    border-radius: 8px;
+  }
+  
+  .close-btn {
+    cursor: pointer;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
 .home .content a
 {
     background: #fff;
