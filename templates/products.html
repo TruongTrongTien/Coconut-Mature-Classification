@@ -47,9 +47,10 @@
         <img id="captured-photo" alt="Ảnh đã chụp" style="display: none;">
       </div>
         </label>
-        {% if coconut_type %}
+        {% if class_name %}
         <div id="result" class="coconut-result">
-             Kết quả dự đoán: {{ coconut_type }}
+          Kết quả dự đoán: {{ class_name }}<br>
+          Độ tin cậy: {{ "{:.2%}".format(class_score) }}
         </div>
         {% endif %}
         <div class="predict-camera-group">

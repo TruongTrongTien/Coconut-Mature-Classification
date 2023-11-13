@@ -4,59 +4,25 @@ import os
 import base64
 import io
 from PIL import Image
-import pandas as pd
 from utils import *
 from configs import *
 
-
 app = Flask(__name__)
 app.secret_key = "your_secret_key"
-
-
-
-# Kiểm tra xem tệp CSV có tồn tại không
-if not os.path.exists(CSV_FILE):
-    # Nếu không tồn tại, tạo một tệp trống
-    df = pd.DataFrame(columns=["username","email", "password"])
-    df.to_csv(CSV_FILE, index=False)
-    
-# Hàm kiểm tra đăng nhập
-def is_authenticated(email, password):
-    users_df = pd.read_csv(CSV_FILE, dtype={"password": str})
-    if (email in users_df["email"].values) and (
-        password == users_df.loc[users_df["email"] == email]["password"].values[0]
-    ):
-        username = users_df.loc[users_df["email"] == email]["username"].values[0]
-        return True, username
-    return False, None
-
-
-  
+ 
 @app.route("/")
 def index():
     return render_template("index.html")
 
-def read_current_id():
-    if os.path.exists("current_id.txt"):
-        with open("current_id.txt", "r") as file:
-            return int(file.read())
-    else:
-        return 1
-
-def update_current_id(new_id):
-    with open("current_id.txt", "w") as file:
-        file.write(str(new_id))
-
 current_id = read_current_id()
-
-
 
 @app.route("/products", methods=["GET", "POST"])
 def products():
     if "email" in session:
         global current_id
 
-        coconut_type = None
+        class_name = None
+        class_score = 0
         captured_image_data = None
 
         if request.method == "POST":
@@ -66,16 +32,16 @@ def products():
             if file:
                 # Xử lý ảnh đã tải lên
                 image = Image.open(file)
-                coconut_type = predict_coconut_type(image, model)
+                class_name, class_score = predict(image)
 
                 # Tạo tên tệp ảnh dựa trên ID và lưu ảnh vào thư mục predict
-                image_filename = os.path.join("predict\\image", f"{current_id}.jpg")
+                image_filename = os.path.join(SAMPLE_FOLDER, "image", f"{current_id}.jpg")
                 image.save(image_filename)
 
                 # Tạo tên tệp txt chung để lưu kết quả dự đoán
                 result_filename = os.path.join(SAMPLE_FOLDER, "results.txt")
                 with open(result_filename, "a", encoding="utf-8") as result_file:
-                    result_file.write(f"ID: {current_id}, Coconut Type: {coconut_type}\n")
+                    result_file.write(f"ID: {current_id}, Coconut Type: {class_name}\n")
 
                 # Tăng ID lên để sử dụng cho lần tải lên tiếp theo
                 current_id += 1
@@ -88,19 +54,20 @@ def products():
 
                 # Chuyển đổi dữ liệu ảnh dưới dạng URI thành đối tượng hình ảnh
                 image_data = base64.b64decode(image_data_uri.split(",")[1])
-                image = Image.open(io.BytesIO(image_data))
+                file = io.BytesIO(image_data)
+                image = Image.open(file)
 
                 # Thực hiện dự đoán
-                coconut_type = predict_coconut_type(image, model)
+                class_name, class_score = predict(image)
 
                 # Tạo tên tệp ảnh dựa trên ID và lưu ảnh vào thư mục predict
-                image_filename = os.path.join("predict\\image", f"{current_id}.jpg")
+                image_filename = os.path.join(SAMPLE_FOLDER, "image", f"{current_id}.jpg")
                 image.save(image_filename)
 
                 # Tạo tên tệp txt chung để lưu kết quả dự đoán
                 result_filename = os.path.join(SAMPLE_FOLDER, "results.txt")
                 with open(result_filename, "a", encoding="utf-8") as result_file:
-                    result_file.write(f"ID: {current_id}, Coconut Type: {coconut_type}\n")
+                    result_file.write(f"ID: {current_id}, Coconut Type: {class_name}\n")
 
                 # Tăng ID lên để sử dụng cho lần tải lên tiếp theo
                 current_id += 1
@@ -108,14 +75,12 @@ def products():
                 # Cập nhật giá trị mới của current_id vào tệp
                 update_current_id(current_id)
 
-            # Nếu không có file và không có captured-image-data, gán giá trị "Không xác định"
-            if coconut_type is None:
-                coconut_type = "Không xác định"
-        return render_template("products.html", captured_image_data=captured_image_data, coconut_type=coconut_type)
+            if class_name is None:
+                class_name = "Không xác định"
+        return render_template("products.html", captured_image_data=captured_image_data, class_name=class_name, class_score=class_score)
     else:
         return redirect(url_for("login"))
     
-
 
 @app.route("/aboutus")
 def aboutus():
@@ -123,7 +88,7 @@ def aboutus():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    mess = ""  # Khởi tạo thông báo là chuỗi trống
+    mess = ""
 
     if request.method == "POST":
         if "register" in request.form:
@@ -139,7 +104,7 @@ def login():
             session["username"] = username  # Set the username in the session
             return redirect(url_for("products"))
         else:
-            mess = "Đăng nhập không thành công. Thử lại."  # Đặt thông báo không thành công
+            mess = "Đăng nhập không thành công. Thử lại."
 
     return render_template("login.html", mess=mess)
 
@@ -147,26 +112,24 @@ def login():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     message = ""
-    success = False  # Thêm biến để chỉ định thành công
+    success = False
 
     if request.method == "POST":
         username = request.form["username"]
         email = request.form["email"]
         password = request.form["password"]
-        users_df = pd.read_csv(CSV_FILE, dtype={"password": str})
+        users_df = pd.read_csv(USERS_FILE, dtype={"password": str})
 
         if email in users_df["email"].values:
             message = "Email đã tồn tại. Thử lại."
         else:
             new_user = pd.DataFrame({"username": [username], "email": [email], "password": [password]})
             users_df = pd.concat([users_df, new_user], ignore_index=True)
-            users_df.to_csv(CSV_FILE, index=False)
+            users_df.to_csv(USERS_FILE, index=False)
             message = "Đăng ký thành công!"
             success = True
 
     return render_template("login.html", message=message, success=success,isRegisterShown=True)
-
-
 
 @app.route("/logout")
 def logout():
@@ -174,4 +137,4 @@ def logout():
     return redirect(url_for("index"))
 
 if __name__ == "__main__":
-    app.run(debug=True) 
+    app.run(debug=True)

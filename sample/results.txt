@@ -12,3 +12,30 @@ ID: 12, Coconut Type: Dừa nạo
 ID: 13, Coconut Type: Dừa già
 ID: 14, Coconut Type: Dừa già
 ID: 15, Coconut Type: Dừa già
+ID: 16, Coconut Type: [[ 2.3601024 -5.7199383 -1.7787158]]
+ID: 17, Coconut Type: ('Dừa nạo', 0.9978737831115723)
+ID: 18, Coconut Type: Dừa nạo
+ID: 19, Coconut Type: Dừa nạo
+ID: 20, Coconut Type: Dừa nạo
+ID: 21, Coconut Type: Dừa nạo
+ID: 22, Coconut Type: Dừa nạo
+ID: 23, Coconut Type: Dừa già
+ID: 24, Coconut Type: Không xác định
+ID: 25, Coconut Type: Dừa già
+ID: 26, Coconut Type: Không xác định
+ID: 27, Coconut Type: Dừa già
+ID: 28, Coconut Type: Dừa già
+ID: 29, Coconut Type: Dừa già
+ID: 30, Coconut Type: Không xác định
+ID: 31, Coconut Type: Dừa già
+ID: 32, Coconut Type: Dừa nạo
+ID: 33, Coconut Type: Dừa nạo
+ID: 34, Coconut Type: Dừa non
+ID: 35, Coconut Type: Khác
+ID: 36, Coconut Type: Dừa già
+ID: 37, Coconut Type: Khác
+ID: 38, Coconut Type: Dừa già
+ID: 39, Coconut Type: Khác
+ID: 40, Coconut Type: Khác
+ID: 41, Coconut Type: Dừa già
+ID: 42, Coconut Type: Khác
