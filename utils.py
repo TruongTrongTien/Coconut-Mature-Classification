@@ -50,3 +50,14 @@ def predict(image):
 
     return class_name, class_score
 
+def reset_current_id():
+    result_folder_empty = not os.path.exists(os.path.join(SAMPLE_FOLDER, "results.txt")) or os.stat(os.path.join(SAMPLE_FOLDER, "results.txt")).st_size == 0
+    image_folder_empty = not os.listdir(os.path.join(SAMPLE_FOLDER, "image"))
+
+    
+    if result_folder_empty and image_folder_empty:
+        update_current_id(1)
+
+# Ban đầu, đọc giá trị hiện tại của current_id từ tệp và kiểm tra để reset nếu cần
+current_id = read_current_id()
+reset_current_id()

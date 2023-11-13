@@ -1,22 +1,10 @@
-ID: 1, Coconut Type: Khác, Confidence: 90.08%
-ID: 2, Coconut Type: Khác, Confidence: 90.08%
+ID: 1, Coconut Type: Dừa non, Confidence: 98.74%
+ID: 2, Coconut Type: Khác, Confidence: 55.10%
 ID: 3, Coconut Type: Dừa già, Confidence: 99.48%
-ID: 4, Coconut Type: Dừa non, Confidence: 98.88%
-ID: 5, Coconut Type: Dừa già, Confidence: 99.72%
-ID: 6, Coconut Type: Dừa non, Confidence: 99.42%
-ID: 7, Coconut Type: Dừa già, Confidence: 96.14%
-ID: 8, Coconut Type: Khác, Confidence: 98.78%
-ID: 9, Coconut Type: Khác, Confidence: 54.01%
-ID: 10, Coconut Type: Dừa nạo, Confidence: 99.98%
-ID: 11, Coconut Type: Dừa nạo, Confidence: 89.62%
-ID: 12, Coconut Type: Dừa nạo, Confidence: 99.98%
-ID: 13, Coconut Type: Dừa nạo, Confidence: 99.66%
-ID: 14, Coconut Type: Dừa nạo, Confidence: 100.00%
-ID: 15, Coconut Type: Dừa nạo, Confidence: 99.99%
-ID: 16, Coconut Type: Khác, Confidence: 91.72%
-ID: 17, Coconut Type: Dừa nạo, Confidence: 99.99%
-ID: 18, Coconut Type: Dừa già, Confidence: 75.45%
-ID: 19, Coconut Type: Dừa nạo, Confidence: 99.99%
-ID: 20, Coconut Type: Dừa nạo, Confidence: 99.99%
-ID: 21, Coconut Type: Dừa non, Confidence: 95.57%
-ID: 22, Coconut Type: Dừa nạo, Confidence: 99.85%
+ID: 4, Coconut Type: Dừa nạo, Confidence: 99.66%
+ID: 5, Coconut Type: Dừa nạo, Confidence: 99.66%
+ID: 6, Coconut Type: Dừa nạo, Confidence: 99.99%
+ID: 7, Coconut Type: Dừa nạo, Confidence: 99.99%
+ID: 8, Coconut Type: Dừa nạo, Confidence: 99.99%
+ID: 9, Coconut Type: Dừa nạo, Confidence: 89.62%
+ID: 10, Coconut Type: Dừa già, Confidence: 96.14%

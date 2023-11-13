@@ -14,18 +14,6 @@ app.secret_key = "your_secret_key"
 def index():
     return render_template("index.html")
 
-current_id = read_current_id()
-def reset_current_id():
-    result_folder_empty = not os.path.exists(os.path.join(SAMPLE_FOLDER, "results.txt")) or os.stat(os.path.join(SAMPLE_FOLDER, "results.txt")).st_size == 0
-    image_folder_empty = not os.listdir(os.path.join(SAMPLE_FOLDER, "image"))
-
-    
-    if result_folder_empty and image_folder_empty:
-        update_current_id(1)
-
-# Ban đầu, đọc giá trị hiện tại của current_id từ tệp và kiểm tra để reset nếu cần
-current_id = read_current_id()
-reset_current_id()
 @app.route("/products", methods=["GET", "POST"])
 def products():
     if "email" in session:
