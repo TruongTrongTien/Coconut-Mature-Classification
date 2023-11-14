@@ -12,10 +12,45 @@ app.secret_key = "your_secret_key"
  
 @app.route("/")
 def index():
+
+    """
+    View function for the root route ("/"), rendering the "index.html" template.
+
+    This route serves as the main entry point of the web application, displaying the home or landing page.
+
+    Returns:
+    - Renders the "index.html" template.
+    """
+
     return render_template("index.html")
 
 @app.route("/products", methods=["GET", "POST"])
 def products():
+
+    """
+    View function for the "/products" route, handling both GET and POST requests.
+
+    This route allows users with an active session (logged in) to upload images or provide captured image data
+    for coconut type prediction. The predicted results, including the coconut type and confidence score,
+    are displayed on the "products.html" template.
+
+    Methods:
+    - GET: Renders the "products.html" template with the option to upload images or provide captured image data.
+    - POST: Processes the uploaded image or captured image data, performs coconut type prediction,
+            saves the image and prediction results, and updates the current_id for the next upload.
+
+    Returns:
+    - If the user is not logged in, redirects to the login page.
+    - If the request is a GET, renders the "products.html" template.
+    - If the request is a POST, renders the "products.html" template with the prediction results.
+
+    Variables:
+    - current_id: A global variable representing the current identifier for uploaded images.
+    - class_name: The predicted coconut type.
+    - class_score: The confidence score associated with the prediction.
+    - captured_image_data: The base64-encoded image data if provided through the captured-image-data field.
+    """
+
     if "email" in session:
         global current_id
 
@@ -82,10 +117,42 @@ def products():
 
 @app.route("/aboutus")
 def aboutus():
+
+    """
+    View function for the "/aboutus" route, rendering the "aboutus.html" template.
+
+    This route provides information about the web application, team, or any relevant content on the "aboutus.html" page.
+
+    Returns:
+    - Renders the "aboutus.html" template.
+    """
+
     return render_template("aboutus.html")
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+
+    """
+    View function for the "/login" route, handling both GET and POST requests.
+
+    This route allows users to log in by providing their email and password. If the login is successful,
+    the user's email and username are stored in the session, and they are redirected to the "products" page.
+    If the user chooses to register, they are redirected to the registration page.
+
+    Methods:
+    - GET: Renders the "login.html" template with an optional login error message.
+    - POST: Processes the login form, validates the user's credentials, and logs in the user if successful.
+            If the user chooses to register, redirects to the registration page.
+
+    Returns:
+    - If the login is successful, redirects to the "products" page.
+    - If the user chooses to register, redirects to the registration page.
+    - If the login is unsuccessful, renders the "login.html" template with an error message.
+
+    Variables:
+    - mess: A message variable used to display login error messages.
+    """
+
     mess = ""
 
     if request.method == "POST":
@@ -109,6 +176,31 @@ def login():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+
+    """
+    View function for the "/register" route, handling both GET and POST requests.
+
+    This route allows users to register by providing a username, email, and password.
+    If the registration is successful, the user information is added to the users file,
+    and a success message is displayed on the "login.html" template.
+
+    Methods:
+    - GET: Renders the "login.html" template with an optional registration success message.
+    - POST: Processes the registration form, validates the email uniqueness,
+            adds the new user to the users file if successful, and displays a success message.
+
+    Returns:
+    - If the registration is successful, renders the "login.html" template with a success message.
+    - If the email is already registered, renders the "login.html" template with an error message.
+
+    Variables:
+    - message: A message variable used to display registration success or error messages.
+    - success: A boolean variable indicating whether the registration was successful or not.
+               Used to conditionally display the success message.
+    - isRegisterShown: A boolean variable indicating whether the registration form is shown or not.
+                      Used to conditionally display the registration form on the "login.html" template.
+    """
+
     message = ""
     success = False
 
@@ -131,6 +223,16 @@ def register():
 
 @app.route("/logout")
 def logout():
+
+    """
+    View function for the "/logout" route.
+
+    This route logs the user out by clearing the session and redirects them to the home page.
+
+    Returns:
+    - Redirects to the "index" page after clearing the session.
+    """
+
     session.clear()
     return redirect(url_for("index"))
 
