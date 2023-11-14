@@ -36,6 +36,27 @@ This repository hosts an AI-based system for accurately classifying the maturity
 # Dataset
 Link dataset: https://drive.google.com/drive/folders/1IoUpBAI8BWnbe_s-eyFtMbCO16AEHO8b?usp=sharing
 Dataset description:
+* Original data:
+    * Dừa non: 407
+    * Dừa nạo: 1142
+    * Dừa già: 1024
+    * Khác: 1050
+* 1.EDA and Data Preprocessing
+* Crop image: Crop all images in the dataset into squares
+* Data augmentation ( dừa non )
+* Run file: ``` DataAugmentation.py ```
+------------------------------------
+    transforms.RandomHorizontalFlip(): Apply random horizontal flip to the image with a default probability of 0.5
+    transforms.RandomRotation(10): Apply random rotation to the image with a rotation range of ±10 degrees
+    transforms.RandomResizedCrop(224, scale=(0.8, 1.0)): Apply random resized crop to the image, resizing it to 224x224, with a scale factor between 0.8 and 1.0
+    transforms.RandomAffine(degrees=0, translate=(0.1, 0.1)): Apply random affine transformation to the image with a rotation range of 0 degrees and translation of 0.1 in both directions
+    transforms.RandomPerspective(distortion_scale=0.2, p=0.5): Apply random perspective transformation to the image with a distortion scale of 0.2 and a probability of 0.5
+Data visualization:
+![image](https://github.com/TruongTrongTien/Coconut-Mature-Classification/assets/88047081/24391d9d-37ab-486e-a71e-0b0c8998feaf)
+
+* 2.Create a train/val/test split
+* Run file: ``` DataSplit.py ```
+![image](https://github.com/TruongTrongTien/Coconut-Mature-Classification/assets/88047081/b5a529b8-53e5-48d1-8bca-428c95e7dfe1)
 
 # Installation
 
