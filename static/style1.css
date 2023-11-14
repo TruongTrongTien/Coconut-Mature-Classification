@@ -215,6 +215,10 @@ body {
     text-decoration: underline;
 
 }
+ #message{
+    text-align: center;
+}
+
 @media (max-width: 1040px) {
 .navigation .btnLogin-popup{
       margin: 0px;

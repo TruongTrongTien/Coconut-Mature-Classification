@@ -12,7 +12,7 @@
       <header>
         <a href="/"><img src="{{ url_for('static', filename='logo.png') }}" class="logo"></a>
         <div class="menu-btn"></div>
-        <div class="navigation">
+        <div class="navigation" id="Navigation">
             <div class="navigation-items">
                 <a href="/">Trang Chủ</a>
                 <a href="/products">Sản Phẩm</a>
@@ -43,12 +43,16 @@
         <div class="details-overlay" id="detailsOverlay">
           <div class="details-content">
               <!-- Nội dung giới thiệu về dự án -->
-              <img src="{{ url_for('static', filename='994.jpg') }} " class="mota" alt="Mô tả ảnh">
-              <p>Phân loại chất lượng dừa (non, nạo, khô) là quá trình xác định và tách biệt các loại dừa dựa trên độ tuổi và mức độ chín của quả dừa. Điều này có thể thực hiện bằng cách sử dụng mắt thường hoặc các phương pháp công nghệ hơn để giúp trong việc phân loại dừa.</p>
+              <p>Dừa non: dừa màu xanh trong, da dừa láng, bóng, đầu mào dừa chưa tóm lại, còn to</p>
+              <img src="{{ url_for('static', filename='non.jpg') }} " class="mota" alt="Mô tả ảnh">
+              <p>Dừa nạo:  da dừa còn bóng nhưng nó ít hơn dừa non, đầu mào dừa bắt đầu tóm lại, đục hơn dừa non</p>
+              <img src="{{ url_for('static', filename='nao.jpg') }} " class="mota" alt="Mô tả ảnh">
+              <p>Dừa già: đầu mào dừa tóm lại, màu da xanh đậm (sau này thành nâu, vàng,...), da dừa không còn bóng mà trở nên khằn (sờ vào không mịn  như dừa non mà cứng)</p>
+              <img src="{{ url_for('static', filename='gia.jpg') }} " class="mota" alt="Mô tả ảnh">
               <div class="close-btn" onclick="closeDetails()">Đóng</div>
           </div>
         </div>
-        <div class="media-icons">
+        <div class="media-icons" id="mediaicon">
             <a href="https://github.com/TruongTrongTien/Coconut-Mature-Classification"><i class="fab fa-facebook-f"></i></a>
             <a href="https://github.com/TruongTrongTien/Coconut-Mature-Classification"><i class="fab fa-instagram"></i></a>
             <a href="https://github.com/TruongTrongTien/Coconut-Mature-Classification"><i class="fab fa-github"></i></a>
@@ -102,17 +106,23 @@
     const detailsOverlay = document.getElementById("detailsOverlay");
     const contentOverlay = document.querySelector(".content-overlay");
     const sliderNavigation = document.getElementById("sliderNavigation"); // Thêm thanh slider-navigation vào
+    const aNavigation = document.getElementById("Navigation");
+    const mediaicon = document.getElementById("mediaicon");
 
     detailsLink.addEventListener("click", () => {
       detailsOverlay.style.display = "flex";
       contentOverlay.style.display = "none";
       sliderNavigation.style.display = "none"; // Ẩn thanh slider-navigation khi hiển thị chi tiết
+      aNavigation.style.display = "none";
+      mediaicon.style.display = "none";
     });
 
     function closeDetails() {
       detailsOverlay.style.display = "none";
       contentOverlay.style.display = "block";
       sliderNavigation.style.display = "flex"; // Hiển thị lại thanh slider-navigation khi đóng chi tiết
+      aNavigation.style.display = "flex";
+      mediaicon.style.display = "flex";
 }
 
 
