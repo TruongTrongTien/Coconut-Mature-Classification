@@ -3,6 +3,7 @@ This repository hosts an AI-based system for accurately classifying the maturity
 
 # Table of Contents
 * Motivation
+* Web Application
 * Dataset
 * Installation
 * Usage
@@ -32,6 +33,12 @@ This repository hosts an AI-based system for accurately classifying the maturity
 * Enhance the accuracy and speed of coconut quality assessment 
 * Facilitate decision-making in coconut processing industries
 * Reduce human labor and error in coconut quality assessment.
+
+# Web Application
+
+### Diagram
+![diagram](https://github.com/TruongTrongTien/Coconut-Mature-Classification/assets/121301557/63fd97c7-3290-44f0-a91e-ee75a751e360)
+
       
 # Dataset
 Link dataset: https://drive.google.com/drive/folders/1IoUpBAI8BWnbe_s-eyFtMbCO16AEHO8b?usp=sharing
