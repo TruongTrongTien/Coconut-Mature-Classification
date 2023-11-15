@@ -4,7 +4,6 @@ This repository hosts an AI-based system for accurately classifying the maturity
 # Table of Contents
 * Motivation
 * Dataset
-* Web Application
 * Installation
 * Usage
 * Training
@@ -41,10 +40,10 @@ Dataset description:
     * Dừa non: 407
     * Dừa nạo: 1142
     * Dừa già: 1024
-    * Khác: 1050
-* 1.EDA and Data Preprocessing
+    * Khác: 1061
+### Data Preprocessing
 * Crop image: Crop all images in the dataset into squares
-* Data augmentation ( dừa non )
+* Data augmentation with 'young coconut' class
 * Run file: ``` DataAugmentation.py ```
 ------------------------------------
     transforms.RandomHorizontalFlip(): Apply random horizontal flip to the image with a default probability of 0.5
@@ -52,15 +51,15 @@ Dataset description:
     transforms.RandomResizedCrop(224, scale=(0.8, 1.0)): Apply random resized crop to the image, resizing it to 224x224, with a scale factor between 0.8 and 1.0
     transforms.RandomAffine(degrees=0, translate=(0.1, 0.1)): Apply random affine transformation to the image with a rotation range of 0 degrees and translation of 0.1 in both directions
     transforms.RandomPerspective(distortion_scale=0.2, p=0.5): Apply random perspective transformation to the image with a distortion scale of 0.2 and a probability of 0.5
-Data visualization:
-![image](https://github.com/TruongTrongTien/Coconut-Mature-Classification/assets/88047081/24391d9d-37ab-486e-a71e-0b0c8998feaf)
 
-* 2.Create a train/val/test split
+### Data Distribution visualization:
+
+![image](https://github.com/TruongTrongTien/Coconut-Mature-Classification/assets/88047081/d53e6bf2-72cb-4d99-99fd-f7f4241c7c48)
+
+### Data Splitting
 * Run file: ``` DataSplit.py ```
-![image](https://github.com/TruongTrongTien/Coconut-Mature-Classification/assets/88047081/b5a529b8-53e5-48d1-8bca-428c95e7dfe1)
+![image](https://github.com/TruongTrongTien/Coconut-Mature-Classification/assets/88047081/f92cd668-38c5-45be-9a97-2436b01308dc)
 
-# Web Application
-![diagram](https://github.com/TruongTrongTien/Coconut-Mature-Classification/assets/121301557/f55577d8-f8b7-4d6d-a835-7056eef7fc87)
 
 # Installation
 
