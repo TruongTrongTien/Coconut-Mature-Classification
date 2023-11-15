@@ -48,6 +48,9 @@ Dataset description:
     * Dừa nạo: 1142
     * Dừa già: 1024
     * Khác: 1061
+    * ![image](https://github.com/TruongTrongTien/Coconut-Mature-Classification/assets/88047081/27f0c73a-cd22-42f1-9a3c-b9fb1b468213)
+
+
 ### Data Preprocessing
 * Crop image: Crop all images in the dataset into squares
 * Data augmentation with 'young coconut' class
