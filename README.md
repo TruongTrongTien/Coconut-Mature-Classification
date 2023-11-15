@@ -117,4 +117,19 @@ flask run
 # Evaluation
 # Results
 # Limits
+* Data Variety and Quantity:
+   * Data was collected only in the best condition, not in normal condition.
+   * Data quantity was limited because the time when data was collected wasn't suitable.
+   * Due to weather condition and insuitable season, the data is only enough for training. 
+* Real-time model accuracy: Due to data problems, model accuracy isn't really high with real-time data which affects by weather condition.
+* Input: only one-object images from your personal file or camera.
+* Simple model: Model only conduct coconut classification from one-object images.
+
+# Future works
+* Improve data variety and quantity
+* Increasing real-time model accuracy by hyperparameter tunning, data improvement,...
+* From one-object input, model input will be multiple objects, videos.
+* Developing coconut detection and classification system.
+* Apply best model in coconut industry and farmers.
+  
 # Contributions
