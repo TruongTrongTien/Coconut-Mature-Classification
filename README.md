@@ -4,6 +4,7 @@ This repository hosts an AI-based system for accurately classifying the maturity
 # Table of Contents
 * Motivation
 * Dataset
+* Web Application
 * Installation
 * Usage
 * Training
@@ -57,6 +58,9 @@ Data visualization:
 * 2.Create a train/val/test split
 * Run file: ``` DataSplit.py ```
 ![image](https://github.com/TruongTrongTien/Coconut-Mature-Classification/assets/88047081/b5a529b8-53e5-48d1-8bca-428c95e7dfe1)
+
+# Web Application
+![diagram](https://github.com/TruongTrongTien/Coconut-Mature-Classification/assets/121301557/f55577d8-f8b7-4d6d-a835-7056eef7fc87)
 
 # Installation
 
