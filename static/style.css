@@ -164,11 +164,11 @@ section
 }
 .home .content h1
 {
-    font-size: 4em;
+    font-size: 3em;
     font-weight: 900;
     text-transform: 900;
     letter-spacing: 5px;
-    line-height: 75px;
+    line-height: 60px;
     margin-bottom: 40px;    
 }
 .home .content p
