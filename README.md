@@ -114,6 +114,20 @@ flask run
 ```
 
 # Training
+
+### Criterion
+Cross Entropy Loss
+
+### Optimizer
+* Lion Optimizer, lr = 1e-4, weight decay = 1e-2
+* Number of epochs: 30
+* Result:
+    * Train Loss:  0.0822
+    * Val Loss: 0.1559
+    * Train F1: 0.9578
+    * Val F1: 0.9392
+![model training chart](https://github.com/TruongTrongTien/Coconut-Mature-Classification/assets/121301557/e9dc1fce-8e8e-4893-b81e-84b6979e1562)
+
 # Evaluation
 # Results
 # Limits
